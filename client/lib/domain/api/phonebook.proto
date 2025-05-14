@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package phonebook;
+
+service PhonebookService {
+  rpc GetNumberByName (NameRequest) returns (NumberResponse);
+}
+
+message NameRequest {
+  string name = 1;
+}
+
+message NumberResponse {
+  string name = 1;
+  string number = 2;
+  bool found = 3;
+  string signature = 4;
+}
