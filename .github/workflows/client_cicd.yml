@@ -21,7 +21,7 @@ jobs:
             - uses: actions/checkout@v2
             - run: flutter pub get
               working-directory: client
-            - run: sh ./scripts/flutter_analyze.sh
+            - run: sh ../scripts/flutter_analyze.sh
               working-directory: client
             - name: Restore keystore
               run: |
