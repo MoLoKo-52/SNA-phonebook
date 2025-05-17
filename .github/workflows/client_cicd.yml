@@ -20,13 +20,17 @@ jobs:
                   channel: 'stable'
             - uses: actions/checkout@v2
             - run: flutter pub get
+              working-directory: client
             - run: sh ./scripts/flutter_analyze.sh
+              working-directory: client
             - name: Restore keystore
               run: |
                 mkdir -p android/keystore
                 echo "${{ secrets.STORE_FILE }}" | base64 -d > android/keystore/my-release-key.jks
+              working-directory: client
             - name: Build release APK
               run: flutter build apk --release
+              working-directory: client
               env:
                 STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
                 KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
@@ -36,7 +40,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                   name: release.apk
-                  path: build/app/outputs/apk/release/app-release.apk
+                  path: client/build/app/outputs/apk/release/app-release.apk
      
 
 
