@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import phonebook_pb2 as phonebook__pb2
+from . import phonebook_pb2 as phonebook__pb2
 
 GRPC_GENERATED_VERSION = '1.72.0'
 GRPC_VERSION = grpc.__version__

@@ -1,3 +1,4 @@
 protobuf==6.30.0 
 grpcio==1.72.0 
 grpcio-tools==1.72.0
+pytest>=7.0.0

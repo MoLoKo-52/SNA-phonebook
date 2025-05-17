@@ -3,8 +3,7 @@ from concurrent import futures
 import json
 import hmac
 import hashlib
-import phonebook_pb2
-import phonebook_pb2_grpc
+from . import phonebook_pb2, phonebook_pb2_grpc
 
 SECRET_KEY = b'righ;odihfghio'  # Key used for HMAC signature generation
 PHONEBOOK: dict = {}            # Raw phonebook data loaded from file
