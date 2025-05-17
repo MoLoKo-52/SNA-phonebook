@@ -12,13 +12,15 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-java@v1
+            - uses: actions/setup-java@v4
               with:
-                  java-version: '12.x'
-            - uses: subosito/flutter-action@v1
+                  java-version: '17'
+                  distribution: 'temurin'
+            - uses: subosito/flutter-action@v2
               with:
                   channel: 'stable'
-            - uses: actions/checkout@v2
+                  flutter-version: '3.29.0'
+            - uses: actions/checkout@v4
             - run: flutter pub get
               working-directory: client
             - run: sh ../scripts/flutter_analyze.sh
