@@ -3,9 +3,11 @@ from concurrent import futures
 import json
 import hmac
 import hashlib
-from . import phonebook_pb2, phonebook_pb2_grpc
+import phonebook_pb2
+import phonebook_pb2_grpc
+import os
 
-SECRET_KEY = b'righ;odihfghio'  # Key used for HMAC signature generation
+SECRET_KEY = b'supersecretkey'  # Key used for HMAC signature generation
 PHONEBOOK: dict = {}            # Raw phonebook data loaded from file
 norm_map: dict = {}             # Normalized name-to-number mapping for flexible lookup
 
@@ -57,7 +59,8 @@ class PhonebookServicer(phonebook_pb2_grpc.PhonebookServiceServicer):
 # Entry point: loads data, starts and runs the gRPC server
 def serve():
     print("Loading phonebook...")
-    load_phonebook("data.json")
+    base_dir = os.path.dirname(__file__)
+    load_phonebook(os.path.join(base_dir, "data.json"))
 
     print("Starting server...")
     server = create_server(max_workers=10)
