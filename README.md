@@ -18,9 +18,9 @@ docker run -p 50051:50051 phonebook-server
 
 1. Download the build of the application
 
-[Android (.apk)]()
+[Android (.apk)](https://github.com/MoLoKo-52/SNA-phonebook/releases/download/v1.0.0/app-release.apk)
 
-[MacOS]()
+[MacOS](https://github.com/MoLoKo-52/SNA-phonebook/releases/download/v1.0.0/phonebook_interface.app.zip)
 
 2. Connect to the same WiFi network with host server with Docker and open the application
 3. Click on the settings icon in the top right and write there IP of the host mashine
