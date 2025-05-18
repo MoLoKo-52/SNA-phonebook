@@ -294,7 +294,7 @@ class _MainPageState extends ConsumerState<MainPage> {
                                   borderRadius: BorderRadius.circular(10),
                                   onTap: () {
                                     openUrl(
-                                      'https://t.me/${user.phone.substring(1)}',
+                                      user.phone, user.name.split(' ')[1]
                                     );
                                   },
                                   child: Image(
