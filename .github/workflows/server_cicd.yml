@@ -32,8 +32,7 @@ jobs:
           pip install -r server/requirements.txt
 
       - name: Run tests
-        run: pytest
-
+        run: PYTHONPATH=server pytest
       - name: Build Docker image
         run: |
           docker build . \
